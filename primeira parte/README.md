@@ -1,5 +1,5 @@
 # Projeto Prático PDSII-TM2
-Em primeiro momento, queremos fazer um projeto voltado a parte de investimento, com as seguintes funcionalidades:
+Em primeiro momento, queremos fazer um projeto voltado a parte de investimento, sendo uma plataforma de investimentos em diferentes áreas, com as seguintes funcionalidades:
 # Historias de usuário
  - 01: Eu como usuário de uma plataforma de investimento, gostaria de ter acesso a catálogos de diferentes tipos de investimento, para ter uma maior diversificações de meus investimentos;
  - 02: Mário como um investidor experiente, gostaria de ver por meio da plataforma, os graficos dos investimentos feitos por ele nos ultimos anos;

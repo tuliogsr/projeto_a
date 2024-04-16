@@ -17,9 +17,9 @@ int main () {
     std::cout << "5 - Historia 05" << std::endl;
 
     int escolha;
-    cin >> escolha;
+    std::cin >> escolha;
 
-    switch (historia_desejada){
+    switch (escolha){
       case 1:
         catalogo(); //Historia 01 
         break;
