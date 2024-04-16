@@ -1,13 +1,10 @@
-#ifndef PROJETO_H
-#define PROJETO_H
+#ifndef CATALOGO_H
+#define CATALOGO_H
 
 #include <iostream>
 #include <string>
 
-using namespace std;
 
-{
-};
-
+void catalogo();
 
 #endif
