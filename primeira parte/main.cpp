@@ -15,6 +15,8 @@ int main () {
     std::cout << "3 - Historia 03" << std::endl;
     std::cout << "4 - Historia 04" << std::endl;
     std::cout << "5 - Historia 05" << std::endl;
+//    std::cout << "6 - Cadastrar usuario" << std::endl;
+//    std::cout << "7 - Login" << std::endl;
 
     int escolha;
     std::cin >> escolha;
@@ -35,6 +37,12 @@ int main () {
       case 5:
         analise(); //Historia 05
         break;
+//        case 6:
+//          cadastro_usuario(); //Historia 05
+//          break;
+//        case 7:
+//          login_usuario(); //Historia 05
+//          break; 
       case 0:
         historia_desejada = false;
         break;

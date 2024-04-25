@@ -4,3 +4,4 @@ Os membros desse grupo são:
 - Joubert Victor Machado Sharma;
 - Pedro Henrique de Oliveira Borges;
 - Yan Adriel Martins Silva.
+
