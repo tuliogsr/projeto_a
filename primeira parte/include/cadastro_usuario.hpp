@@ -1,10 +1,23 @@
 #ifndef CADASTRO_USUARIO
 #define CADASTRO_USUARIO
 
-#include<iostream>
-#include<string>
+#include <iostream>
+#include <string>
 
-void cadastrar_usuario()
-    
+void cadastrarusuario();
+/*
+//declaração da classe no cabeçalho
+class Usuario{
+    private:
+        std::string nome;
+        std::string sobrenome;
+        std::string email;
+        std::string senha;
 
-#endif
+    public:
+        //Constructor
+        usuario(std::string nome,std::string sobrenome,std::string email,std::string senha);
+        void cadastrar_usuario();
+};*/
+
+#endif //CADASTRO_USUARIO
