@@ -29,3 +29,22 @@ ${BUILD}/cadastro_usuario.o: ${INCLUDE}/cadastro_usuario.hpp ${SRC}/cadastro_usu
 
 ${BUILD}/main.o: ${INCLUDE}/cadastro_usuario.hpp ${INCLUDE}/historia5.hpp ${INCLUDE}/historia4.hpp ${INCLUDE}/historia3.hpp ${INCLUDE}/historia2.hpp ${INCLUDE}/historia1.hpp main.cpp
 	${CC} ${CFLAGS} -I ${INCLUDE}/ -c main.cpp -o ${BUILD}/main.o
+
+
+builder:
+	if not exist build mkdir build
+	if not exist build\bin mkdir build\bin
+
+run:
+	${BUILD}/${TARGET}
+
+clean:
+	del build\*.exe
+	del build\bin\*.o
+
+test:
+	g++ -std=c++11 -Wall -g test.cpp -o progTeste
+	.\progTeste.exe
+
+cleanTest:
+	del progTeste.exe
