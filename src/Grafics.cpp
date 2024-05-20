@@ -1,4 +1,4 @@
-#include "historia2.hpp"
+#include "Grafics.hpp"
 
 void grafico(){
   std::cout << "-----------//-----------" << std::endl;

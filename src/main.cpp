@@ -1,7 +1,7 @@
 
 #include "Catalogo.hpp"
 #include "Grafics.hpp"
-#include "historia3.hpp"
+#include "classes_ativos.hpp"
 #include "alertas_preco.hpp"
 #include "analise_oportuna.hpp"
 #include "cadastro_usuario.hpp"
