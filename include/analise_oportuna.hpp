@@ -13,7 +13,6 @@ public:
     void analise();
     ~analise_oportuna();
 };
-void analise();
 
 #endif
 
