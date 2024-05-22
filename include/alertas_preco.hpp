@@ -3,9 +3,18 @@
 
 #include <iostream>
 #include <string>
+#include "cadastro_usuario.hpp"
+
+class alertas_preco : public Usuario{
+private:
+    float preco;
+public:
+    alertas_preco(float preco);
+    void alertas();
+    ~alertas_preco();
+};
 
 
-void alertas();
 
 #endif
 

@@ -16,7 +16,7 @@ class Usuario{
 
     public:
         //Constructor
-        usuario(std::string nome,std::string sobrenome,std::string email,std::string senha);
+        Usuario(std::string nome,std::string sobrenome,std::string email,std::string senha);
         void cadastrar_usuario();
 };*/
 

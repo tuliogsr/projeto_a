@@ -7,7 +7,7 @@ void cadastrarusuario(){
 }
 /*
 //Definindo o constructor
-Usuario::usuario(std::string nome, std::string sobrenome, std::string email, std::string senha){
+Usuario::Usuario(std::string nome, std::string sobrenome, std::string email, std::string senha){
 //        void cadastrar_usuario(){
             this -> nome = nome;
             this -> sobrenome = sobrenome;
