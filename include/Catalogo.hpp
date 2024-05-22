@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
-#include "cadastro_usuario.hpp"
+
 
 class Catalogo 
 {
