@@ -1,8 +1,8 @@
 #include "analise_oportuna.hpp"
-analise_oportuna::analise_oportuna(/* args */)
+analise_oportuna::analise_oportuna()
 {
 }
-void analise(){
+analise_oportuna::analise(){
   std::cout << "-----------//-----------" << std::endl;
   std::cout << "Analisar e ter algoritmos de recomendacao para identificar oportunidades de investimento promissoras" << std::endl;
   std::cout << "-----------//-----------" << std::endl;

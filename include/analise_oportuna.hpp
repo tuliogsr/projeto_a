@@ -10,7 +10,7 @@ private:
     float preco;
 public:
     analise_oportuna(float preco);
-    void analise_oportuna();
+    void analise();
     ~analise_oportuna();
 };
 void analise();
