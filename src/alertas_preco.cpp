@@ -1,7 +1,7 @@
 #include "alertas_preco.hpp"
 
 
-alertas_preco::alertas_preco()
+alertas_preco::alertas_preco(float preco)
 {
 }
 alertas_preco::alertas(){

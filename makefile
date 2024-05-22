@@ -27,8 +27,8 @@ ${BUILD}/analise_oportuna.o: ${INCLUDE}/analise_oportuna.hpp ${SRC}/analise_opor
 ${BUILD}/cadastro_usuario.o: ${INCLUDE}/cadastro_usuario.hpp ${SRC}/cadastro_usuario.cpp
 	${CC} ${CFLAGS} -I ${INCLUDE}/ -c ${SRC}/cadastro_usuario.cpp -o ${BUILD}/cadastro_usuario.o
 
-${BUILD}/main.o: ${INCLUDE}/cadastro_usuario.hpp ${INCLUDE}/analise_oportuna.hpp ${INCLUDE}/alertas_preco.hpp ${INCLUDE}/classes_ativos.hpp ${INCLUDE}/Grafics.hpp ${INCLUDE}/Catalogo.hpp main.cpp
-	${CC} ${CFLAGS} -I ${INCLUDE}/ -c main.cpp -o ${BUILD}/main.o
+${BUILD}/main.o: ${INCLUDE}/cadastro_usuario.hpp ${INCLUDE}/analise_oportuna.hpp ${INCLUDE}/alertas_preco.hpp ${INCLUDE}/classes_ativos.hpp ${INCLUDE}/Grafics.hpp ${INCLUDE}/Catalogo.hpp ${SRC}/main.cpp
+	${CC} ${CFLAGS} -I ${INCLUDE}/ -c ${SRC}/main.cpp -o ${BUILD}/main.o
 
 
 builder:

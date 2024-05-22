@@ -3,6 +3,25 @@
 
 #include <iostream>
 #include <string>
+#include <fstream>
+#include "cadastro_usuario.hpp"
+
+class Catalogo 
+{
+private:
+    std::ifstream arquivo;  // Stream de arquivo de entrada
+public:
+    Catalogo(/* args */);
+    ~Catalogo();
+};
+
+Catalogo::Catalogo(/* args */)
+{
+}
+
+Catalogo::~Catalogo()
+{
+}
 
 
 void catalogo();

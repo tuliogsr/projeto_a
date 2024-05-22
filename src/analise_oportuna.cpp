@@ -1,5 +1,5 @@
 #include "analise_oportuna.hpp"
-analise_oportuna::analise_oportuna()
+analise_oportuna::analise_oportuna(oportuna)
 {
 }
 analise_oportuna::analise(){

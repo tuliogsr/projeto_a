@@ -7,9 +7,9 @@
 
 class analise_oportuna : public Usuario{
 private:
-    float preco;
+    float oportuna;
 public:
-    analise_oportuna(float preco);
+    analise_oportuna(float oportuna);
     void analise();
     ~analise_oportuna();
 };
