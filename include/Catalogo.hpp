@@ -6,8 +6,7 @@
 #include <fstream>
 
 
-class Catalogo 
-{
+class Catalogo {
 private:
     std::ifstream arquivo;  // Stream de arquivo de entrada
 public:
