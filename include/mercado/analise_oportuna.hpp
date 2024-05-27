@@ -3,9 +3,8 @@
 
 #include <iostream>
 #include <string>
-#include "cadastro_usuario.hpp"
 
-class analise_oportuna : public Usuario{
+class analise_oportuna {
 private:
     float oportuna;
 public:

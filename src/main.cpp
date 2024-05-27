@@ -34,12 +34,16 @@ int main () {
       case 3:
         classes_ativos(); //Historia 03
         break;
-      case 4:
-        alertas(); //Historia 04
+      case 4: {
+      alertas_preco Alertas(100.0);
+        Alertas.alertas(); //Historia 04
         break;
-      case 5:
-        analise(); //Historia 05
+      }
+      case 5: {
+      analise_oportuna Analise(100.0);
+        Analise.analise(); //Historia 05
         break;
+      }
       case 6:
           cadastrarusuario();
           break;
@@ -66,11 +70,13 @@ int main () {
         usuario.cadastrar_usuario();
        break;
 //        case 7:
-//          login_usuario(); //Historia 05
+//          login_usuario(); 
 //          break; */
       case 0:
+      {
         historia_desejada = false;
         break;
+      }
       default:
         std::cout << "Opcao invalida" << std::endl;
         break;

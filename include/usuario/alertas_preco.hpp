@@ -5,7 +5,7 @@
 #include <string>
 #include "cadastro_usuario.hpp"
 
-class alertas_preco : public Usuario{
+class alertas_preco {
 private:
     float preco;
 public:

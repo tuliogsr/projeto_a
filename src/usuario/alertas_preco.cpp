@@ -1,9 +1,9 @@
 #include "alertas_preco.hpp"
+#include <fstream>
 
+alertas_preco::alertas_preco(float preco) : preco(preco){}
 
-alertas_preco::alertas_preco(float preco) : preco(preco);
-
-alertas_preco::alertas(){
+void alertas_preco::alertas(){
   std::cout << "-----------//-----------" << std::endl;
   std::cout << "Configurar alertas de preco para ser notificado quando um ativo atingir um determinado valor" << std::endl;
   std::cout << "-----------//-----------" << std::endl;
