@@ -1,4 +1,5 @@
 #include "alertas_preco.hpp"
+#include "cadastro_usuario.hpp"
 #include <fstream>
 
 alertas_preco::alertas_preco(float preco) : preco(preco){}

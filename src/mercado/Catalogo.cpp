@@ -1,11 +1,11 @@
 #include "Catalogo.hpp"
 
-Catalogo::Catalogo(){}
+Catalogo::Catalogo() {}
 void catalogo(){
   std::cout << "-----------//-----------" << std::endl;
   std::cout << "Acessar a catalogos de diferentes tipos de investimento." << std::endl;
   std::cout << "-----------//-----------" << std::endl;
 }
 
-Catalogo::~Catalogo(){}
+Catalogo::~Catalogo() {}
 //Era a historia 1

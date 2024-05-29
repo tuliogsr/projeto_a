@@ -12,13 +12,13 @@ ${TARGET}: ${BUILD}/cadastro_usuario.o ${BUILD}/analise_oportuna.o ${BUILD}/aler
 ${BUILD}/Catalogo.o: ${INCLUDE}/mercado/Catalogo.hpp ${SRC}/mercado/Catalogo.cpp
 	${CC} ${CFLAGS} -I ${INCLUDE}/mercado/ -c ${SRC}/mercado/Catalogo.cpp -o ${BUILD}/Catalogo.o
 
-${BUILD}/Grafics.o: ${INCLUDE}/usuario/Grafics.hpp ${SRC}/usuario/Grafics.cpp
+${BUILD}/Grafics.o: ${INCLUDE}/usuario/cadastro_usuario.hpp ${INCLUDE}/usuario/Grafics.hpp ${SRC}/usuario/Grafics.cpp
 	${CC} ${CFLAGS} -I ${INCLUDE}/usuario/ -c ${SRC}/usuario/Grafics.cpp -o ${BUILD}/Grafics.o
 
 ${BUILD}/classes_ativos.o: ${INCLUDE}/mercado/classes_ativos.hpp ${SRC}/mercado/classes_ativos.cpp
 	${CC} ${CFLAGS} -I ${INCLUDE}/mercado/ -c ${SRC}/mercado/classes_ativos.cpp -o ${BUILD}/classes_ativos.o
 
-${BUILD}/alertas_preco.o: ${INCLUDE}/usuario/alertas_preco.hpp ${SRC}/usuario/alertas_preco.cpp
+${BUILD}/alertas_preco.o: ${INCLUDE}/usuario/cadastro_usuario.hpp ${INCLUDE}/usuario/alertas_preco.hpp ${SRC}/usuario/alertas_preco.cpp
 	${CC} ${CFLAGS} -I ${INCLUDE}/usuario/ -c ${SRC}/usuario/alertas_preco.cpp -o ${BUILD}/alertas_preco.o
 
 ${BUILD}/analise_oportuna.o: ${INCLUDE}/mercado/analise_oportuna.hpp ${SRC}/mercado/analise_oportuna.cpp

@@ -4,7 +4,7 @@
 #include "classes_ativos.hpp"
 #include "alertas_preco.hpp"
 #include "analise_oportuna.hpp"
-#include "include/usuario/cadastro_usuario.hpp"
+#include "cadastro_usuario.hpp"
 //#include "login.hpp"
 #include <iostream>
 #include <string>

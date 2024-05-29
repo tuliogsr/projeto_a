@@ -1,4 +1,5 @@
 #include "Grafics.hpp"
+#include "cadastro_usuario.hpp"
 
 void grafico(){
   std::cout << "-----------//-----------" << std::endl;

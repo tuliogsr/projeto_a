@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include "cadastro_usuario.hpp"
 
 class Grafics
 {
