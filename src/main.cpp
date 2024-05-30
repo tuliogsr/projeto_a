@@ -20,8 +20,8 @@ bool verificacao_de_dados(const std::string& dado_entrada, const std::string& no
       {
         return true;
       }
-      return false;
     }
+    return false;
 }
 
 int main () {
@@ -32,8 +32,6 @@ int main () {
   std::string sobrenome_cadastro;
   std::string email_cadastro;
   std::string senha_cadastro;
-
-  bool historia_desejada = true;
   //aqui foi adicionado um loop de repetição que vai verificar o e-mail e senha e dar a opção de cadastro patra o cliente
   do
   {
@@ -44,7 +42,7 @@ int main () {
     std::cout << "Senha: "; 
     std::getline(std::cin, senha_de_entrada);
     std::cout << " " << std::endl;
-    if (verificacao_de_dados(email_de_entrada) = 0 || verificacao_de_dados(senha_de_entrada) = 0)
+    if (!verificacao_de_dados(email_de_entrada,"usuarios.txt") || !verificacao_de_dados(senha_de_entrada,"usuarios.txt"))
     {
       std::cout << " " << std::endl;
       std::cout << " Email ou senha incorretos " << std::endl;
@@ -67,19 +65,12 @@ int main () {
         Usuario usuario(nome_cadastro, sobrenome_cadastro, email_cadastro, senha_cadastro);
         usuario.cadastrar_usuario();
       }
-      else{
-        return 0;
       }
     }
-  } while (verificacao_de_dados(email_de_entrada) = 0 || verificacao_de_dados(senha_de_entrada) = 0);
-  
-  std::cout << "------ Login ------" << std::endl;
-  std::cout << " " << std::endl;
-  std::cout << "Email: ";
-  std::getline(std::cin, email_de_entrada) << std::endl;
-  std::cout << "Senha: "; 
-  std::getline(std::cin, senha_de_entrada);
-  
+    while (!verificacao_de_dados(email_de_entrada,"usuarios.txt") ||!verificacao_de_dados(senha_de_entrada,"usuarios.txt"));
+    std::cout << "Login bem-sucedido" << std::endl;
+
+  bool historia_desejada = true;
   while(historia_desejada){
     std::cout << "Escolha a historia de usuario:" << std::endl;
     std::cout << "1 - Historia 01" << std::endl;
@@ -94,7 +85,7 @@ int main () {
 
     switch (escolha){
       case 1:
-        catalogo(); //Historia 01 
+       catalogo(); //Historia 01 
         break;
       case 2:
         grafico(); //Historia 02
