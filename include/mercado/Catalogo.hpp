@@ -11,7 +11,7 @@ private:
     std::ifstream arquivo;  // Stream de arquivo de entrada
 public:
     Catalogo();
-
+    void mostrarCatalogo();
     ~Catalogo();
  
 };

@@ -14,13 +14,7 @@ public:
     ~Grafics();
 };
 
-Grafics::Grafics(/* args */)
-{
-}
 
-Grafics::~Grafics()
-{
-}
 
 
 void grafico();

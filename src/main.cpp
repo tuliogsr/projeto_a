@@ -84,9 +84,11 @@ int main () {
     std::cin >> escolha;
 
     switch (escolha){
-      case 1:
-       catalogo(); //Historia 01 
+      case 1: {
+        Catalogo catalogoObj;
+        catalogoObj.mostrarCatalogo(); //Historia 01 
         break;
+      }
       case 2:
         grafico(); //Historia 02
         break;
