@@ -7,7 +7,12 @@ void Usuario::cadastrar_usuario(){
     std::ofstream arquivo("usuarios.txt", std::ios_base::app);
     if (arquivo.is_open()) {
         // Escreve os dados do usuário no arquivo
-        arquivo <<" "<< nome <<" "<< sobrenome <<" "<< email << " "<< senha << std::endl;
+        arquivo <<" "<< nome <<" "<< sobrenome <<" "<< email << " "<< senha << " ";
+        arquivo << " Investimentos: ";
+        for (const auto& investimento : investimentos) {
+            arquivo << investimento << " ";
+        }
+        arquivo << std::endl;
         std::cout << "Usuário cadastrado com sucesso !!" << std::endl;
         arquivo.close();
     } else {

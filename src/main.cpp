@@ -8,6 +8,8 @@
 //#include "login.hpp"
 #include <iostream>
 #include <string>
+#include <vector>
+
 bool verificacao_de_dados(const std::string& dado_entrada, const std::string& nome_arquivo ){
     std::ifstream arquivo(nome_arquivo);// criando um objeto para o arquivo que será usado para verificar os dados
     if (!arquivo) { // Verifica se o arquivo foi aberto
@@ -62,8 +64,25 @@ int main () {
         std::cout << "Senha:  ";
         std::getline(std::cin,senha_cadastro);
 
-        Usuario usuario(nome_cadastro, sobrenome_cadastro, email_cadastro, senha_cadastro);
-        usuario.cadastrar_usuario();
+        std::vector<float> investimentos_cadastro;
+                std::string input;
+                std::cout << "Investimentos (digite 'fim' para encerrar): ";
+                while (true) {
+                    std::cin >> input;
+                    if (input == "fim") {
+                        break;
+                    }
+                    try {
+                        float investimento = std::stof(input); // Converte a string para float
+                        investimentos_cadastro.push_back(investimento);
+                    } catch (const std::invalid_argument& e) {
+                        std::cout << "Entrada inválida. Por favor, insira um número ou 'fim' para encerrar." << std::endl;
+                    }
+                }
+                std::cin.ignore(); // Limpa o buffer de entrada
+
+                Usuario usuario(nome_cadastro, sobrenome_cadastro, email_cadastro, senha_cadastro, investimentos_cadastro);
+                usuario.cadastrar_usuario();
       }
       }
     }
