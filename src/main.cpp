@@ -6,6 +6,7 @@
 #include "analise_oportuna.hpp"
 #include "cadastro_usuario.hpp"
 //#include "login.hpp"
+#include "carregar_usuario.hpp"
 #include <iostream>
 #include <string>
 #include <vector>
@@ -27,29 +28,8 @@ bool verificacao_de_dados(const std::string& dado_entrada, const std::string& no
     return false;
 }
 
-Usuario carregar_usuario(const std::string& email, const std::string& nome_arquivo) {
-    std::ifstream arquivo(nome_arquivo);
-    if (!arquivo) {
-        throw std::runtime_error("Erro ao abrir o arquivo: " + nome_arquivo);
-    }
-    std::string linha;
-    while (std::getline(arquivo, linha)) {
-        std::istringstream iss(linha);
-        std::string nome, sobrenome, email_arquivo, senha;
-        std::vector<float> investimentos;
-        iss >> nome >> sobrenome >> email_arquivo >> senha;
-        if (email_arquivo == email) {
-            float investimento;
-            while (iss >> investimento) {
-                investimentos.push_back(investimento);
-            }
-            return Usuario(nome, sobrenome, email_arquivo, senha, investimentos);
-        }
-    }
-    throw std::runtime_error("Usuário não encontrado: " + email);
-}
-
 int main () {
+  float alertinha=0;
   std::string email_de_entrada;
   std::string senha_de_entrada;
   std::string opcao_de_cadastro;
@@ -126,7 +106,7 @@ int main () {
     std::cout << "1 - Historia 01" << std::endl;
     std::cout << "2 - Historia 02" << std::endl;
     std::cout << "3 - Historia 03" << std::endl;
-    std::cout << "4 - Historia 04" << std::endl;
+    std::cout << "4 - configurar alertas de preco para ser notificado quando um ativo atingir um determinado valor" << std::endl;
     std::cout << "5 - Historia 05" << std::endl;
 //    std::cout << "7 - Login" << std::endl;
 
@@ -146,7 +126,9 @@ int main () {
         classes_ativos(); //Historia 03
         break;
       case 4: {
-      alertas_preco Alertas(100.0);
+        std::cout<<"Digite o limite de alerta que voce deseja: "<<std::endl;
+        std::cin>>alertinha;
+        alertas_preco Alertas(alertinha);
         Alertas.alertas(usuario_logado); //Historia 04
         break;
       }

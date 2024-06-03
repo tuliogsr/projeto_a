@@ -8,7 +8,6 @@ void Usuario::cadastrar_usuario(){
     if (arquivo.is_open()) {
         // Escreve os dados do usuário no arquivo
         arquivo <<" "<< nome <<" "<< sobrenome <<" "<< email << " "<< senha << " ";
-        arquivo << " Investimentos: ";
         for (const auto& investimento : investimentos) {
             arquivo << investimento << " ";
         }
