@@ -9,6 +9,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <sstream>
 
 bool verificacao_de_dados(const std::string& dado_entrada, const std::string& nome_arquivo ){
     std::ifstream arquivo(nome_arquivo);// criando um objeto para o arquivo que será usado para verificar os dados
@@ -26,6 +27,28 @@ bool verificacao_de_dados(const std::string& dado_entrada, const std::string& no
     return false;
 }
 
+Usuario carregar_usuario(const std::string& email, const std::string& nome_arquivo) {
+    std::ifstream arquivo(nome_arquivo);
+    if (!arquivo) {
+        throw std::runtime_error("Erro ao abrir o arquivo: " + nome_arquivo);
+    }
+    std::string linha;
+    while (std::getline(arquivo, linha)) {
+        std::istringstream iss(linha);
+        std::string nome, sobrenome, email_arquivo, senha;
+        std::vector<float> investimentos;
+        iss >> nome >> sobrenome >> email_arquivo >> senha;
+        if (email_arquivo == email) {
+            float investimento;
+            while (iss >> investimento) {
+                investimentos.push_back(investimento);
+            }
+            return Usuario(nome, sobrenome, email_arquivo, senha, investimentos);
+        }
+    }
+    throw std::runtime_error("Usuário não encontrado: " + email);
+}
+
 int main () {
   std::string email_de_entrada;
   std::string senha_de_entrada;
@@ -34,6 +57,7 @@ int main () {
   std::string sobrenome_cadastro;
   std::string email_cadastro;
   std::string senha_cadastro;
+  Usuario usuario_logado("", "", "", "", {});
   //aqui foi adicionado um loop de repetição que vai verificar o e-mail e senha e dar a opção de cadastro patra o cliente
   do
   {
@@ -44,6 +68,7 @@ int main () {
     std::cout << "Senha: "; 
     std::getline(std::cin, senha_de_entrada);
     std::cout << " " << std::endl;
+
     if (!verificacao_de_dados(email_de_entrada,"usuarios.txt") || !verificacao_de_dados(senha_de_entrada,"usuarios.txt"))
     {
       std::cout << " " << std::endl;
@@ -65,28 +90,34 @@ int main () {
         std::getline(std::cin,senha_cadastro);
 
         std::vector<float> investimentos_cadastro;
-                std::string input;
-                std::cout << "Investimentos (digite 'fim' para encerrar): ";
-                while (true) {
-                    std::cin >> input;
-                    if (input == "fim") {
-                        break;
-                    }
-                    try {
-                        float investimento = std::stof(input); // Converte a string para float
-                        investimentos_cadastro.push_back(investimento);
-                    } catch (const std::invalid_argument& e) {
-                        std::cout << "Entrada inválida. Por favor, insira um número ou 'fim' para encerrar." << std::endl;
-                    }
-                }
-                std::cin.ignore(); // Limpa o buffer de entrada
+        std::string input;
+        std::cout << "Investimentos (digite 'fim' para encerrar): ";
+        while (true) {
+            std::cin >> input;
+            if (input == "fim") {
+              break;
+            }
+            try {//utilizei try e catch, para capturar exceções que conversão de strings para números podem causar e lidar com elas de forma apropriada. 
+                float investimento = std::stof(input); // Converte a string para float
+                investimentos_cadastro.push_back(investimento);
+            } catch (const std::invalid_argument& e) {
+                std::cout << "Entrada inválida. Por favor, insira um número ou 'fim' para encerrar." << std::endl;
+            }
+        }
+        std::cin.ignore(); // Limpa o buffer de entrada
+        Usuario usuario(nome_cadastro, sobrenome_cadastro, email_cadastro, senha_cadastro, investimentos_cadastro);
+        usuario.cadastrar_usuario();
+      }
+      }else {
+            try {
+                usuario_logado = carregar_usuario(email_de_entrada, "usuarios.txt");
+            } catch (const std::exception& e) {
+                std::cerr << e.what() << std::endl;
+                return 1;
+            }
+        }
 
-                Usuario usuario(nome_cadastro, sobrenome_cadastro, email_cadastro, senha_cadastro, investimentos_cadastro);
-                usuario.cadastrar_usuario();
-      }
-      }
-    }
-    while (!verificacao_de_dados(email_de_entrada,"usuarios.txt") ||!verificacao_de_dados(senha_de_entrada,"usuarios.txt"));
+    }while (!verificacao_de_dados(email_de_entrada,"usuarios.txt") ||!verificacao_de_dados(senha_de_entrada,"usuarios.txt"));
     std::cout << "Login bem-sucedido" << std::endl;
 
   bool historia_desejada = true;
@@ -116,7 +147,7 @@ int main () {
         break;
       case 4: {
       alertas_preco Alertas(100.0);
-        Alertas.alertas(); //Historia 04
+        Alertas.alertas(usuario_logado); //Historia 04
         break;
       }
       case 5: {

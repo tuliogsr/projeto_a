@@ -14,6 +14,12 @@ public:
     Usuario(const std::string& nome, const std::string& sobrenome, const std::string& email, const std::string& senha, const std::vector<float>& investimentos)
         : nome(nome), sobrenome(sobrenome), email(email), senha(senha), investimentos(investimentos) {}
     void cadastrar_usuario();
+
+    // Método getter para obter os investimentos
+    std::vector<float> get_investimentos() const {
+        return investimentos;
+    }
+    
 private:
         std::string nome;
         std::string sobrenome;

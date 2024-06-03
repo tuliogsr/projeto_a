@@ -10,7 +10,7 @@ private:
     float preco;
 public:
     alertas_preco(float preco);
-    void alertas();
+    void alertas(const Usuario& usuario); 
     ~alertas_preco();
 };
 
