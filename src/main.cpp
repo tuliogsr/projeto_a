@@ -5,28 +5,13 @@
 #include "alertas_preco.hpp"
 #include "analise_oportuna.hpp"
 #include "cadastro_usuario.hpp"
-//#include "login.hpp"
+#include "login.hpp"
 #include "carregar_usuario.hpp"
 #include <iostream>
 #include <string>
 #include <vector>
 #include <sstream>
 
-bool verificacao_de_dados(const std::string& dado_entrada, const std::string& nome_arquivo ){
-    std::ifstream arquivo(nome_arquivo);// criando um objeto para o arquivo que será usado para verificar os dados
-    if (!arquivo) { // Verifica se o arquivo foi aberto
-      std::cerr << "Erro ao abrir o arquivo: " << nome_arquivo << std::endl;
-      return false;
-    }
-    std::string linha;
-    while (std::getline(arquivo, linha)){
-      if (linha.find(dado_entrada) != std::string::npos)
-      {
-        return true;
-      }
-    }
-    return false;
-}
 
 int main () {
   float alertinha=0;
@@ -37,6 +22,7 @@ int main () {
   std::string sobrenome_cadastro;
   std::string email_cadastro;
   std::string senha_cadastro;
+  bool login_sucesso = false;
   Usuario usuario_logado("", "", "", "", {});
   //aqui foi adicionado um loop de repetição que vai verificar o e-mail e senha e dar a opção de cadastro patra o cliente
   do
@@ -49,14 +35,27 @@ int main () {
     std::getline(std::cin, senha_de_entrada);
     std::cout << " " << std::endl;
 
-    if (!verificacao_de_dados(email_de_entrada,"usuarios.txt") || !verificacao_de_dados(senha_de_entrada,"usuarios.txt"))
+    //Objeto para verificar o e-mail e senha no login
+    Login login_email(email_de_entrada, "usuarios.txt");
+    Login login_senha(senha_de_entrada, "usuarios.txt");
+
+    bool email_valido = login_email.verificacao_de_dados();
+    bool senha_valida = login_senha.verificacao_de_dados();
+
+    if (!email_valido|| !senha_valida)
     {
       std::cout << " " << std::endl;
       std::cout << " Email ou senha incorretos " << std::endl;
       std::cout << " " << std::endl;
-      std::cout << "Deseja cadastrar um novo usuario? " << std::endl;
+      std::cout << "Deseja cadastrar um novo usuario? (sim/nao)" << std::endl;
       std::getline(std::cin, opcao_de_cadastro);
-      if (opcao_de_cadastro == "sim")
+      if (opcao_de_cadastro != "sim" && opcao_de_cadastro != "nao")
+      {
+        std::cout << "Opcao invalida, encerrando o prorgrama!!" <<std::endl;
+        return 0;
+      }
+      
+      else if (opcao_de_cadastro == "sim")
       {
         std::cout << " ---- Cadastro de usuario ----" << std::endl;
         std::cout << " " << std::endl;
@@ -68,7 +67,7 @@ int main () {
         std::getline(std::cin,email_cadastro);
         std::cout << "Senha:  ";
         std::getline(std::cin,senha_cadastro);
-
+        std::cout << " " << std::endl;
         std::vector<float> investimentos_cadastro;
         std::string input;
         std::cout << "Investimentos (digite 'fim' para encerrar): ";
@@ -88,6 +87,9 @@ int main () {
         Usuario usuario(nome_cadastro, sobrenome_cadastro, email_cadastro, senha_cadastro, investimentos_cadastro);
         usuario.cadastrar_usuario();
       }
+      else if(login_sucesso){
+          login_sucesso = true;
+      }
       }else {
             try {
                 usuario_logado = carregar_usuario(email_de_entrada, "usuarios.txt");
@@ -97,7 +99,7 @@ int main () {
             }
         }
 
-    }while (!verificacao_de_dados(email_de_entrada,"usuarios.txt") ||!verificacao_de_dados(senha_de_entrada,"usuarios.txt"));
+    }while (!login_sucesso);
     std::cout << "Login bem-sucedido" << std::endl;
 
   bool historia_desejada = true;
