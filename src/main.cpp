@@ -92,19 +92,19 @@ int main () {
     bool historia_desejada = true;
     while (historia_desejada) {
         std::cout << "Escolha a historia de usuario:" << std::endl;
-        std::cout << "1 - Historia 01" << std::endl;
+        std::cout << "1 - Catalogo de diferentes tipos de investimento" << std::endl;
         std::cout << "2 - Historia 02" << std::endl;
         std::cout << "3 - Historia 03" << std::endl;
         std::cout << "4 - Configurar alertas de preco para ser notificado quando um ativo atingir um determinado valor" << std::endl;
         std::cout << "5 - Historia 05" << std::endl;
+        std::cout << "0 - Para sair do programa" << std::endl;
 
         int escolha;
         std::cin >> escolha;
 
         switch (escolha) {
             case 1: {
-                Catalogo catalogoObj;
-                catalogoObj.mostrarCatalogo(); // Historia 01
+                menu_major(); // Historia 01
                 break;
             }
             case 2:
@@ -125,9 +125,6 @@ int main () {
                 Analise.analise(); // Historia 05
                 break;
             }
-            //        case 7:
-//          login_usuario(); 
-//          break; */
             case 0: {
                 historia_desejada = false;
                 break;

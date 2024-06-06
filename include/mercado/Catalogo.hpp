@@ -1,24 +1,41 @@
+// Catalogo.hpp
+
 #ifndef CATALOGO_H
 #define CATALOGO_H
 
-#include <iostream>
 #include <string>
+#include <iostream>
 #include <fstream>
 
 
-class Catalogo {
-private:
-    std::ifstream arquivo;  // Stream de arquivo de entrada
+class Catalogo
+{
 public:
-    Catalogo();
-    void mostrarCatalogo();
-    ~Catalogo();
- 
+    virtual ~Catalogo() = default;
+    virtual void menu_filtrar() = 0;
+
+protected:
+    void abrir_arquivo(const std::string& nomeArquivo);
 };
 
+class TipoAcoesVariaveis : public Catalogo
+{
+public:
+    void menu_filtrar() override;
+};
 
+class TipoRendaFixa : public Catalogo
+{
+public:
+    void menu_filtrar() override;
+};
 
+class TipoMoeda : public Catalogo
+{
+public:
+    void menu_filtrar() override;
+};
 
-#endif
+void menu_major();
 
-//Era a historia 1
+#endif // CATALOGO_H;

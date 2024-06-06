@@ -1,0 +1,7 @@
+NOME         VARIACAO         RISCO         APLICACAO 
+
+MGLU3         +4,92%         Medio 13        R$12,79
+
+IBXL          +1,35%         Baixo 6         R$14,58
+
+ABEV3F        +1,99%         Baixo 4         R$11,97

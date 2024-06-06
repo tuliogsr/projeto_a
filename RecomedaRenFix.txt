@@ -1,0 +1,7 @@
+NOME                       VALOR MINIMO         RISCO           IMPOSTO
+
+Tesouro Direto             R$30,00              Baixo            17%
+
+CRI e CRA                  R$1000,00            Medio            Isento
+
+Fundos Imobiliarios        R$80,00              Baixo             20%
