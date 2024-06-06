@@ -3,3 +3,6 @@
  edson wagner edwagner 12 50 150 
  yan adriel yan.adriel23@gmail.com yan123 
  yan adriel yan.adriel28@hotmail.com yan12345678 150 
+ tulio gabriel tuliogabriel 157 50 90 
+ catia aparecida catiaa 000 50 120 
+ joubert victor joubertv 555 80 60 40 

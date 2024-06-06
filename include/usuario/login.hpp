@@ -7,10 +7,11 @@
 
 class Login{
 private:
-    std::string dado_entrada;
+    std::string email;
+    std::string senha;
     std::string nome_arquivo;
 public:
-    Login(const std::string& dado_entrada, const std::string& nome_arquivo);
+    Login(const std::string& email, const std::string& senha, const std::string& nome_arquivo);
     bool verificacao_de_dados();  
 };
 
