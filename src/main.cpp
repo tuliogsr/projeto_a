@@ -93,7 +93,7 @@ int main () {
     while (historia_desejada) {
         std::cout << "Escolha a historia de usuario:" << std::endl;
         std::cout << "1 - Catalogo de diferentes tipos de investimento" << std::endl;
-        std::cout << "2 - Historia 02" << std::endl;
+        std::cout << "2 - graficos dos investimentos feitos pelo usuario nos ultimos meses" << std::endl;
         std::cout << "3 - Historia 03" << std::endl;
         std::cout << "4 - Configurar alertas de preco para ser notificado quando um ativo atingir um determinado valor" << std::endl;
         std::cout << "5 - Historia 05" << std::endl;
@@ -107,12 +107,15 @@ int main () {
                 menu_major(); // Historia 01
                 break;
             }
-            case 2:
-                grafico(); // Historia 02
+            case 2: {
+                Grafics grafic;
+                grafic.grafico(usuario_logado); // Historia 02
                 break;
-            case 3:
+            }
+            case 3:{
                 classes_ativos(); // Historia 03
                 break;
+            }
             case 4: {
                 std::cout << "Digite o limite de alerta que voce deseja: " << std::endl;
                 std::cin >> alertinha;

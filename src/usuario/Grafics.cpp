@@ -1,15 +1,20 @@
 #include "Grafics.hpp"
 #include "cadastro_usuario.hpp"
 
-Grafics::Grafics()
+Grafics::Grafics() {}
+
+void Grafics::grafico(const Usuario &usuario)
 {
+  std::cout << "Grafico dos ultimos investimentos do usuario:" << std::endl;
+  const std::vector<float> &investimentos = usuario.get_investimentos();
+  std::cout << "Investimentos carregados para o usuario" << ": ";
+  int num_aleatorio = 0;
+  for (float inv : investimentos)
+  {
+    num_aleatorio++;
+    std::cout <<"mes "<< num_aleatorio << ": " << inv << " ";
+  }
+  std::cout << std::endl;
 }
-void grafico(){
-  std::cout << "-----------//-----------" << std::endl;
-  std::cout << "Mostrar graficos dos investimentos feitos pelas pessoas nos ultimos anos." << std::endl;
-  std::cout << "-----------//-----------" << std::endl;
-}
-Grafics::~Grafics()
-{
-}
-//Era a Hitoria 2
+Grafics::~Grafics() {}
+// Era a Hitoria 2

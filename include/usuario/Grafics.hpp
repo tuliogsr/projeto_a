@@ -5,19 +5,13 @@
 #include <string>
 #include "cadastro_usuario.hpp"
 
-class Grafics
-{
+class Grafics {
 private:
-    
 public:
-    Grafics(/* args */);
+    Grafics();
+    void grafico(const Usuario& usuario); 
     ~Grafics();
 };
-
-
-
-
-void grafico();
 
 #endif
 

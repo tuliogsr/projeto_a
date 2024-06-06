@@ -19,13 +19,6 @@ Usuario carregar_usuario(const std::string& email, const std::string& nome_arqui
             while (iss >> investimento) {
                 investimentos.push_back(investimento);
             }
-            std::cout << "Investimentos carregados para o usuario " << email << ": ";
-            int num_aleatorio = 0;
-            for (float inv : investimentos) {
-                num_aleatorio++;
-                std::cout << num_aleatorio << ": " << inv << " ";
-            }
-            std::cout << std::endl;
             return Usuario(nome, sobrenome, email_arquivo, senha, investimentos);
         }
     }
