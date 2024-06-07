@@ -1,0 +1,7 @@
+NOME                       VALOR MINIMO         RISCO           IMPOSTO
+
+CRI e CRA                  R$1000,00            Medio            Isento
+
+LCI e LCA                  R$1000,00            Baixo            Isento
+
+Debentures                 R$1000,00            Medio             11%

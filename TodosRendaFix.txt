@@ -1,0 +1,13 @@
+NOME                       VALOR MINIMO         RISCO           IMPOSTO
+
+Tesouro Direto             R$30,00              Baixo            17%
+
+Fundos Imobiliarios        R$80,00              Baixo             20%
+
+CRI e CRA                  R$1000,00            Medio            Isento
+
+LCI e LCA                  R$1000,00            Baixo            Isento
+
+CDB e LC                   R$1000,00            Baixo             21%
+
+Debentures                 R$1000,00            Medio             11%

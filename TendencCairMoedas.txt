@@ -1,0 +1,7 @@
+MOEDA           VARIACAO            EM REAL
+
+Peso argentino   -0,91%             R$0,06
+
+Libra            -0,98%             R$6,83
+
+Iene             +0,38%             R$0,35

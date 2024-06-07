@@ -1,0 +1,9 @@
+NOME         VARIACAO         RISCO         APLICACAO
+
+IBXL          +1,35%         Baixo 6        R$14,58
+
+PETR4         +0,47%         Medio 8        R$48,87
+
+ABEV3F        +1,99%         Baixo 4        R$11,97
+
+IBOV          +1,23%         Medio 8        R$69,47 

@@ -26,10 +26,10 @@ void Catalogo::abrir_arquivo(const std::string &nomeArquivo)
 void menu_major()
 {
     int escolha = 0;
-    std::cout << "Qual Catalogo quer acessar: " << std::endl;
-    std::cout << "1 - Catalogo de investimentos em Acoes Variaveis" << std::endl;
-    std::cout << "2 - Catalogo de investimentos em Renda Fixa" << std::endl;
-    std::cout << "3 - Cotacao de moedas" << std::endl;
+    std::cout << "Qual Catalogo quer acessar: \n" << std::endl;
+    std::cout << "1 - Catalogo de investimentos em Acoes Variaveis:" << std::endl;
+    std::cout << "2 - Catalogo de investimentos em Renda Fixa:" << std::endl;
+    std::cout << "3 - Cotacao de moedas:" << std::endl;
     std::cout << "0 - Voltar\n";
 
     Catalogo *catalogo = nullptr;
@@ -53,7 +53,7 @@ void menu_major()
         std::cout << "Voltando...\n";
 
     default:
-        std::cout << "Opção invalida" << std::endl;
+        std::cout << "Opção invalida\n" << std::endl;
         return;
     }
 
@@ -68,7 +68,7 @@ void TipoAcoesVariaveis::menu_filtrar()
 {
 
     int escolha = 0;
-    std::cout << "Filtrar por:" << std::endl;
+    std::cout << "Filtrar por:\n" << std::endl;
     std::cout << "1- Todos:" << std::endl;
     std::cout << "2- Variacao:" << std::endl;
     std::cout << "3- Rentabilidade:" << std::endl;
@@ -82,17 +82,22 @@ void TipoAcoesVariaveis::menu_filtrar()
     switch (escolha)
     {
     case 1:
-        std::cout << "Todos" << std::endl;
-        abrir_arquivo("");
+        std::cout << "Todos:" << std::endl;  
+        abrir_arquivo("TodosAcoesVaria.txt");
+        std::cout << "\n";
+
         break;
     case 2:
-        std::cout << "Variacao" << std::endl;
-        abrir_arquivo("");
+        std::cout << "Variacao:" << std::endl;
+        abrir_arquivo("VariacAcaoVarialvel.txt");
+        std::cout << "\n";
+
         break;
 
     case 3:
-        std::cout << "Rentabilidade" << std::endl;
-        abrir_arquivo("");
+        std::cout << "Rentabilidade:" << std::endl;
+        abrir_arquivo("RentabAcoeVaria.txt");
+        std::cout << "\n";
 
         break;
 
@@ -118,11 +123,10 @@ void TipoAcoesVariaveis::menu_filtrar()
 void TipoRendaFixa::menu_filtrar()
 {
     int escolha = 0;
-    std::cout << "Filtrar por:" << std::endl;
+    std::cout << "Filtrar por:\n" << std::endl;
     std::cout << "1- Todos:" << std::endl;
-    std::cout << "2- Valor Minimo:" << std::endl;
-    std::cout << "3- Imposto:" << std::endl;
-    std::cout << "4- Recomendados:" << std::endl;
+    std::cout << "2- Imposto:" << std::endl;
+    std::cout << "3- Recomendados:" << std::endl;
     std::cout << "0- Voltar\n";
 
     std::cout << "Escolha: ";
@@ -132,34 +136,34 @@ void TipoRendaFixa::menu_filtrar()
     switch (escolha)
     {
     case 1:
-        std::cout << "Todos" << std::endl;
-        abrir_arquivo("");
+        std::cout << "Todos:" << std::endl;
+        abrir_arquivo("TodosRendaFix.txt");
+        std::cout << "\n";
+
         break;
     case 2:
-        std::cout << "Maior Retorno" << std::endl;
-        abrir_arquivo("");
+        std::cout << "Imposto:" << std::endl;
+        abrir_arquivo("ImpostoRendaFix.txt");
+        std::cout << "\n";
+
         break;
 
     case 3:
-        std::cout << "Menor tempo de espera para sacar" << std::endl;
-        abrir_arquivo("");
-
-        break;
-
-    case 4:
-        std::cout << "Recomendados:\n" << std::endl;
-        abrir_arquivo("RecomedaRenFix.txt");
+        std::cout << "Recomendado:" << std::endl;
+        abrir_arquivo("RecomendaRenFix.txt");
         std::cout << "\n";
 
 
         break;
+
     case 0:
-        std::cout << "Voltando" << std::endl;
+        std::cout << "Voltando\n" << std::endl;
         menu_major();
+        std::cout << "\n";
 
         break;
     default:
-        std::cout << "Erro" << std::endl;
+        std::cout << "Opcao invalidade" << std::endl;
 
         return;
     }
@@ -168,11 +172,9 @@ void TipoRendaFixa::menu_filtrar()
 void TipoMoeda::menu_filtrar()
 {
     int escolha = 0;
-    std::cout << "Filtrar por:" << std::endl;
-    std::cout << "1- Todos" << std::endl;
-    std::cout << "2- Aplicacao Minima" << std::endl;
-    std::cout << "3- Menor tempo de espera para sacar" << std::endl;
-    std::cout << "4- Recomendo" << std::endl;
+    std::cout << "Filtrar por:\n" << std::endl;
+    std::cout << "1- Todos:" << std::endl;
+    std::cout << "2- Tendencia de cair:" << std::endl;
     std::cout << "0- Voltar\n";
 
     std::cout << "Escolha: ";
@@ -182,33 +184,28 @@ void TipoMoeda::menu_filtrar()
     switch (escolha)
     {
     case 1:
-        std::cout << "Todos" << std::endl;
-        abrir_arquivo("");
+        std::cout << "Todos:" << std::endl;
+        abrir_arquivo("TodosMoedas.txt");
         break;
     case 2:
-        std::cout << "Maior Retorno" << std::endl;
-        abrir_arquivo("");
+        std::cout << "Tendencia de cair:" << std::endl;
+        abrir_arquivo("TendencCairMoedas.txt");
         break;
 
-    case 3:
-        std::cout << "Menor tempo de espera para sacar" << std::endl;
-        abrir_arquivo("");
-
-        break;
-
-    case 4:
-        std::cout << "Recomendo" << std::endl;
-        abrir_arquivo("");
-
-        break;
     case 0:
-        std::cout << "Voltando" << std::endl;
+        std::cout << "Voltando...\n" << std::endl;
         menu_major();
 
         break;
     default:
-        std::cout << "Erro" << std::endl;
+        std::cout << "Opcao invalida" << std::endl;
 
         return;
     }
+}
+
+int main()
+{
+    menu_major();
+    return 0;
 }

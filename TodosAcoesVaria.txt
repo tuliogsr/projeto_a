@@ -1,0 +1,17 @@
+NOME         VARIACAO         RISCO         APLICACAO
+
+HSI           -0,44%         Alto 15        R$1,92
+
+IBXL          +1,35%         Baixo 6        R$14,58
+
+COMP          -0,09%         Alto 13        R$2,17
+
+PETR4         +0,47%         Medio 8        R$48,87
+
+IBXL          +1,35%         Baixo 6        R$14,58
+
+IBOV          +1,23%         Medio 8        R$69,47 
+
+MGLU3         +4,92%         Medio 13       R$12,79
+
+ABEV3F        +1,99%         Baixo 4        R$11,97

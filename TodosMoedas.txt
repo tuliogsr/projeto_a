@@ -1,0 +1,13 @@
+MOEDA           VARIACAO            EM REAL
+
+Euro             -0,75%             R$5,81
+
+Peso argentino   -0,91%             R$0,06
+
+Libra            -0,98%             R$6,83
+
+Dolar            -1,02%             R$5,49
+
+Iene             +0,38%             R$0,35
+
+Metical          -0,42              R$0,08
