@@ -77,7 +77,7 @@ int main () {
                         float investimento = std::stof(input); // Converte a string para float
                         investimentos_cadastro.push_back(investimento);
                     } catch (const std::invalid_argument& e) {
-                        std::cout << "Entrada inválida. Por favor, insira um número ou 'fim' para encerrar." << std::endl;
+                        std::cout << "Entrada invalida. Por favor, insira um numero ou 'fim' para encerrar." << std::endl;
                     }
                 }
                 std::cin.ignore(); // Limpa o buffer de entrada
@@ -93,10 +93,10 @@ int main () {
     while (historia_desejada) {
         std::cout << "Escolha a historia de usuario:" << std::endl;
         std::cout << "1 - Catalogo de diferentes tipos de investimento" << std::endl;
-        std::cout << "2 - graficos dos investimentos feitos pelo usuario nos ultimos meses" << std::endl;
+        std::cout << "2 - Graficos dos investimentos feitos pelo usuario nos ultimos meses" << std::endl;
         std::cout << "3 - Historia 03" << std::endl;
         std::cout << "4 - Configurar alertas de preco para ser notificado quando um ativo atingir um determinado valor" << std::endl;
-        std::cout << "5 - Historia 05" << std::endl;
+        std::cout << "5 - Recomendacao de oportunidades de investimento promissoras." << std::endl;
         std::cout << "0 - Para sair do programa" << std::endl;
 
         int escolha;
@@ -124,8 +124,19 @@ int main () {
                 break;
             }
             case 5: {
-                analise_oportuna Analise(100.0);
-                Analise.analise(); // Historia 05
+                std::cout << "Escolha o tipo de investimento que voce gostaria de saber alguma oportunidade promissora:" << std::endl;
+                std::cout << "1 - Renda Fixa" << std::endl;
+                std::cout << "2 - Acoes" << std::endl;
+                int tipo_investimento;
+                std::cin >> tipo_investimento;
+                analise_oportuna analise;
+                if (tipo_investimento == 1) {
+                    analise.imprimir_oportunidade_recomendada("RecomendaRenFix.txt"); 
+                } else if (tipo_investimento == 2) {
+                    analise.imprimir_oportunidade_recomendada("RecomendaAcoVar.txt");
+                } else {
+                    std::cout << "Opcao invalida" << std::endl;
+                }// Historia 05
                 break;
             }
             case 0: {

@@ -6,10 +6,9 @@
 
 class analise_oportuna {
 private:
-    float oportuna;
 public:
-    analise_oportuna(float oportuna);
-    void analise();
+    analise_oportuna();
+    void imprimir_oportunidade_recomendada(const std::string& arquivo_nome);
     ~analise_oportuna();
 };
 
