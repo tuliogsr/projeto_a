@@ -5,7 +5,7 @@
 #include <string>
 
 class Ativo {
-private:
+protected:
     std::string nome;
     double valor;
 
@@ -17,15 +17,16 @@ public:
 };
 
 class CDI : public Ativo {
+private:
+    int quantidade;
+
 public:
     CDI(const std::string& nome, double valor, int quantidade);
     virtual ~CDI();
     
-    virtual void info() const override;
+    virtual void info() const;
 };
 
 void classes_ativos();
 
 #endif
-
-//Era historia 3
