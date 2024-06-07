@@ -203,9 +203,3 @@ void TipoMoeda::menu_filtrar()
         return;
     }
 }
-
-int main()
-{
-    menu_major();
-    return 0;
-}
