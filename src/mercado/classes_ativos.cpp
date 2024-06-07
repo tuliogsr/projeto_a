@@ -1,9 +1,8 @@
 #include "classes_ativos.hpp"
 
 void classes_ativos(){
-  std::cout << "-----------//-----------" << std::endl;
-  std::cout << "Acessar uma variedade de classes de ativos" << std::endl;
-  std::cout << "-----------//-----------" << std::endl;
+  std::cout << "Bancos que trabalham com CDI" << std::endl;
+  std::cout << "Mercado Pago" << std::endl;
+  std::cout << "Neon" << std::endl;
+  std::cout << "C6 Bank" << std::endl;
 }
-
-//Era historia 3

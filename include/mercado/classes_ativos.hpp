@@ -5,7 +5,7 @@
 #include <string>
 
 class Ativo {
-protected:
+private:
     std::string nome;
     double valor;
 
@@ -16,24 +16,10 @@ public:
     virtual void info() const;
 };
 
-class Acao : public Ativo {
-private:
-    int quantidade;
-
+class CDI : public Ativo {
 public:
-    Acao(const std::string& nome, double valor, int quantidade);
-    virtual ~Acao();
-    
-    virtual void info() const override;
-};
-
-class Moeda : public Ativo {
-private:
-    std::string simbolo;
-
-public:
-    Moeda(const std::string& nome, double valor, const std::string& simbolo);
-    virtual ~Moeda();
+    CDI(const std::string& nome, double valor, int quantidade);
+    virtual ~CDI();
     
     virtual void info() const override;
 };

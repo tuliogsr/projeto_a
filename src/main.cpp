@@ -94,7 +94,7 @@ int main () {
         std::cout << "Escolha a historia de usuario:" << std::endl;
         std::cout << "1 - Catalogo de diferentes tipos de investimento" << std::endl;
         std::cout << "2 - Graficos dos investimentos feitos pelo usuario nos ultimos meses" << std::endl;
-        std::cout << "3 - Historia 03" << std::endl;
+        std::cout << "3 - Ver exemplos de bancos que trabalham com CDI" << std::endl;
         std::cout << "4 - Configurar alertas de preco para ser notificado quando um ativo atingir um determinado valor" << std::endl;
         std::cout << "5 - Recomendacao de oportunidades de investimento promissoras." << std::endl;
         std::cout << "0 - Para sair do programa" << std::endl;
