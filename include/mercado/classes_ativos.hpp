@@ -1,9 +1,9 @@
-#ifndef ATIVOS_H
-#define ATIVOS_H
+#ifndef CLASSES_ATIVOS_HPP
+#define CLASSES_ATIVOS_HPP
 
 #include <iostream>
-#include <string>
 
+// Classe base Ativo com encapsulamento aprimorado
 class Ativo {
 protected:
     std::string nome;
@@ -12,10 +12,16 @@ protected:
 public:
     Ativo(const std::string& nome, double valor);
     virtual ~Ativo();
-    
+
+    std::string getNome() const;
+    double getValor() const;
+    void setNome(const std::string& nome);
+    void setValor(double valor);
+
     virtual void info() const;
 };
 
+// Classe derivada CDI com encapsulamento aprimorado
 class CDI : public Ativo {
 private:
     int quantidade;
@@ -23,7 +29,11 @@ private:
 public:
     CDI(const std::string& nome, double valor, int quantidade);
     virtual ~CDI();
-    virtual void info() const;
+
+    int getQuantidade() const;
+    void setQuantidade(int quantidade);
+
+    virtual void info() const override;
 };
 
-#endif
+#endif // CLASSES_ATIVOS_HPP

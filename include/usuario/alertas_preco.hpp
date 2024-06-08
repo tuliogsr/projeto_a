@@ -8,9 +8,10 @@
 class alertas_preco {
 private:
     float preco;
+    const Usuario& usuario;
 public:
-    alertas_preco(float preco);
-    void alertas(const Usuario& usuario); 
+    alertas_preco(float preco, const Usuario& usuario);
+    void alertas(); 
     ~alertas_preco();
 };
 

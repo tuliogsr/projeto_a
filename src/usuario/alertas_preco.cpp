@@ -3,9 +3,9 @@
 #include <fstream>
 #include <sstream> // Adicionado para std::istringstream
 
-alertas_preco::alertas_preco(float preco) : preco(preco) {}
+alertas_preco::alertas_preco(float preco, const Usuario& usuario) : preco(preco), usuario(usuario) {}
 
-void alertas_preco::alertas(const Usuario& usuario) {
+void alertas_preco::alertas() { 
     std::cout << " " << std::endl;
     std::cout << "Verificando investimentos para alertas. Limite de alerta: " << preco << std::endl;
 

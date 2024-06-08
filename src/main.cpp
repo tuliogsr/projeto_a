@@ -126,8 +126,8 @@ int main () {
                 std::cout << " " << std::endl;
                 std::cout << "Digite o limite de alerta que voce deseja: " << std::endl;
                 std::cin >> alertinha;
-                alertas_preco Alertas(alertinha);
-                Alertas.alertas(usuario_logado); // Historia 04
+                alertas_preco Alertas(alertinha, usuario_logado);
+                Alertas.alertas(); // Historia 04
                 break;
             }
             case 5: {

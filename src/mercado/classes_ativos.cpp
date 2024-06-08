@@ -1,15 +1,45 @@
 #include "classes_ativos.hpp"
-#include <iostream>
 
 Ativo::Ativo(const std::string& nome, double valor) : nome(nome), valor(valor) {
 }
+
 Ativo::~Ativo() {
 }
+
+std::string Ativo::getNome() const {
+    return nome;
+}
+
+double Ativo::getValor() const {
+    return valor;
+}
+
+void Ativo::setNome(const std::string& nome) {
+    this->nome = nome;
+}
+
+void Ativo::setValor(double valor) {
+    this->valor = valor;
+}
+
 void Ativo::info() const {
     std::cout << "Ativo: " << nome << std::endl;
 }
+
 CDI::CDI(const std::string& nome, double valor, int quantidade) : Ativo(nome, valor), quantidade(quantidade) {
 }
+
+CDI::~CDI() {
+}
+
+int CDI::getQuantidade() const {
+    return quantidade;
+}
+
+void CDI::setQuantidade(int quantidade) {
+    this->quantidade = quantidade;
+}
+
 void CDI::info() const {
     std::cout << "Bancos que trabalham com CDI:" << std::endl;
     std::cout << " " << std::endl;
@@ -24,6 +54,4 @@ void CDI::info() const {
     std::cout << "Banco Inter" << std::endl;
     std::cout << "C6 Bank" << std::endl;
     std::cout << " " << std::endl;
-}
-CDI::~CDI() {
 }
