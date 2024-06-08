@@ -48,7 +48,7 @@ int main () {
             std::cout << " " << std::endl;
             std::cout << "Email ou senha incorretos" << std::endl;
             std::cout << " " << std::endl;
-            std::cout << "Deseja cadastrar um novo usuario? (sim/nao)" << std::endl;
+            std::cout << "Deseja cadastrar um novo usuario? (sim/nao - ou aperte qualquer tecla para sair do programa) " << std::endl;
             std::getline(std::cin, opcao_de_cadastro);
             if (opcao_de_cadastro != "sim" && opcao_de_cadastro != "nao") {
                 std::cout << "Opcao invalida, encerrando o programa!!" << std::endl;
@@ -97,6 +97,7 @@ int main () {
         std::cout << "3 - Ver exemplos de bancos que trabalham com CDI" << std::endl;
         std::cout << "4 - Configurar alertas de preco para ser notificado quando um ativo atingir um determinado valor" << std::endl;
         std::cout << "5 - Recomendacao de oportunidades de investimento promissoras." << std::endl;
+        std::cout << "6 - Adicionar novos investimentos." << std::endl;
         std::cout << "0 - Para sair do programa" << std::endl;
 
         int escolha;
@@ -138,6 +139,12 @@ int main () {
                     std::cout << "Opcao invalida" << std::endl;
                 }// Historia 05
                 break;
+            }
+            case 6: {
+                float novo_investimento;
+                std::cout << "Digite o valor do novo investimento: ";
+                std::cin >> novo_investimento;
+                usuario_logado.adicionar_investimento(novo_investimento);
             }
             case 0: {
                 historia_desejada = false;

@@ -19,7 +19,9 @@ public:
     std::vector<float> get_investimentos() const {
         return investimentos;
     }
-    
+    //Método para adicionar novos investimentos
+    void adicionar_investimento(float novo_investimento);
+    void atualizar_arquivo();
 private:
         std::string nome;
         std::string sobrenome;
