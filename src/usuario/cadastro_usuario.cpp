@@ -15,7 +15,7 @@ void Usuario::cadastrar_usuario(){
         arquivo << std::endl;
         std::cout << "Usuário cadastrado com sucesso !!" << std::endl;
         arquivo.close();
-    } else {
+    } else {// Verifica se o arquivo foi aberto
         std::cerr << "Erro ao abrir o arquivo usuarios.txt!" << std::endl;
     }
 }
@@ -26,7 +26,6 @@ void Usuario::adicionar_investimento(float novo_investimento) {
 }
 
 // Implementação do método privado atualizar_arquivo
-// Método privado para atualizar o arquivo usuarios.txt com os dados atualizados do usuário
 // Método privado para atualizar o arquivo usuarios.txt com os dados atualizados do usuário
 void Usuario::atualizar_arquivo() {
     std::ifstream arquivo_entrada("usuarios.txt");

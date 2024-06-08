@@ -38,6 +38,7 @@ int main () {
 
         if (login.verificacao_de_dados()) {
             login_sucesso = true;
+            //utilizei try e catch, para capturar exceções que conversão de strings para números podem causar e lidar com elas de forma apropriada.
             try {
                 usuario_logado = carregar_usuario(email_de_entrada, "usuarios.txt");
             } catch (const std::exception& e) {
