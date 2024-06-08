@@ -30,9 +30,11 @@ void analise_oportuna::imprimir_oportunidade_recomendada(const std::string& arqu
         // Inicializa o gerador de números aleatórios
         std::srand(static_cast<unsigned int>(std::time(nullptr)));
         int indice_aleatorio = std::rand() % (linhas.size() - 1) + 1; // Ignora a linha de cabeçalho
+        std::cout << " " << std::endl;
         std::cout << "Oportunidade de Investimento Promissora:" << std::endl;
         std::cout << linhas[0] << std::endl;
         std::cout << linhas[indice_aleatorio] << std::endl;
+        std::cout << " " << std::endl;
     } else {
         std::cerr << "O arquivo nao contem linhas suficientes para selecionar uma oportunidade promissora" << std::endl;
     }

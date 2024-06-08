@@ -23,10 +23,7 @@ private:
 public:
     CDI(const std::string& nome, double valor, int quantidade);
     virtual ~CDI();
-    
     virtual void info() const;
 };
-
-void classes_ativos();
 
 #endif

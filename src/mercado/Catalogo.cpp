@@ -26,6 +26,7 @@ void Catalogo::abrir_arquivo(const std::string &nomeArquivo)
 void menu_major()
 {
     int escolha = 0;
+    std::cout << " " << std::endl;
     std::cout << "Qual Catalogo quer acessar: \n" << std::endl;
     std::cout << "1 - Catalogo de investimentos em Acoes Variaveis:" << std::endl;
     std::cout << "2 - Catalogo de investimentos em Renda Fixa:" << std::endl;

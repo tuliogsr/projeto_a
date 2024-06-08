@@ -9,11 +9,13 @@ void Grafics::grafico(const Usuario &usuario)
   std::cout << " " << std::endl;
 
   std::cout << "Grafico dos ultimos investimentos do usuario:" << std::endl;
+  std::cout << " " << std::endl;
 
   // Obtém os investimentos do usuário
   const std::vector<float> &investimentos = usuario.get_investimentos();
 
   std::cout << "Investimentos carregados para o usuario" << ": " << std::endl;
+  std::cout << " " << std::endl;
 
   std::cout << "      |" << std::endl;
 

@@ -39,12 +39,11 @@ void Usuario::atualizar_arquivo() {
         std::cerr << "Erro ao abrir o arquivo temp.txt para escrita!" << std::endl;
         return;
     }
-
     std::string linha;
     while (std::getline(arquivo_entrada, linha)) {
         std::istringstream iss(linha);
-        std::string email_arquivo;
-        iss >> email_arquivo;
+        std::string nome_arquivo, sobrenome_arquivo, email_arquivo, senha_arquivo;
+        iss >> nome_arquivo >> sobrenome_arquivo >> email_arquivo >> senha_arquivo;
         if (email_arquivo == email) {
             // Substituir a linha do usuário com os novos investimentos
             arquivo_saida << nome << " " << sobrenome << " " << email << " " << senha << " ";
@@ -52,6 +51,7 @@ void Usuario::atualizar_arquivo() {
                 arquivo_saida << investimento << " ";
             }
             arquivo_saida << std::endl;
+            
         } else {
             // Escrever a linha original no arquivo temporário
             arquivo_saida << linha << std::endl;

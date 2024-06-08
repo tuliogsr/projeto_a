@@ -110,15 +110,20 @@ int main () {
                 break;
             }
             case 2: {
+                std::cout << " " << std::endl;
                 Grafics grafic;
-                grafic.grafico(usuario_logado); // Historia 02
+                grafic.grafico(usuario_logado); 
+                std::cout << " " << std::endl;// Historia 02
                 break;
             }
             case 3:{
-                classes_ativos(); // Historia 03
+                std::cout << " " << std::endl;
+                Ativo* ativo = new  CDI("usuario", 100.0, 1);
+                ativo->info();// Historia 03
                 break;
             }
             case 4: {
+                std::cout << " " << std::endl;
                 std::cout << "Digite o limite de alerta que voce deseja: " << std::endl;
                 std::cin >> alertinha;
                 alertas_preco Alertas(alertinha);
@@ -126,6 +131,7 @@ int main () {
                 break;
             }
             case 5: {
+                std::cout << " " << std::endl;
                 std::cout << "Escolha o tipo de investimento que voce gostaria de saber alguma oportunidade promissora:" << std::endl;
                 std::cout << "1 - Renda Fixa" << std::endl;
                 std::cout << "2 - Acoes" << std::endl;
@@ -139,6 +145,7 @@ int main () {
                 } else {
                     std::cout << "Opcao invalida" << std::endl;
                 }// Historia 05
+                std::cout << " " << std::endl;
                 break;
             }
             case 6: {
